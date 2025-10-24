@@ -1,0 +1,76 @@
+/* GENERAL RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;overflow-x:hidden;background:#0d0d0d;color:#ffb6c1;}
+
+/* STARFIELD CANVAS */
+#starfield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+
+/* CUSTOM STAR CURSOR */
+.custom-cursor{
+  position:fixed;width:15px;height:15px;
+  background:#ffb6c1;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  pointer-events:none;z-index:9999;
+}
+.cursor-sparkle{position:fixed;width:5px;height:5px;background:#ffb6c1;border-radius:50%;pointer-events:none;opacity:1;animation:sparkleFade 0.6s forwards;z-index:9998;}
+@keyframes sparkleFade{0%{transform:scale(1);opacity:1;}100%{transform:scale(0);opacity:0;}}
+
+/* HEADER TOP NAV */
+header{position:fixed;top:0;right:0;width:100%;display:flex;justify-content:flex-end;align-items:center;padding:20px 50px;background:rgba(13,13,13,0.8);z-index:1000;gap:30px;}
+.logo{font-family:'Playfair Display', serif;font-size:2rem;color:#ffb6c1;margin-right:auto;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{text-decoration:none;color:#ffb6c1;font-weight:bold;padding:8px 12px;border-radius:5px;transition:all 0.3s;}
+.nav-links a:hover{background:linear-gradient(90deg,#ffb6c1,#ff69b4);color:#0d0d0d;transform:scale(1.1);}
+
+/* HERO */
+#hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;}
+#hero h2{font-size:3rem;} #hero h2 span{color:#ff69b4;}
+#hero p{margin-top:15px;font-size:1.2rem;}
+.hero-animations{display:flex;justify-content:center;gap:30px;margin-top:30px;}
+.circle-animation{width:20px;height:20px;background:#ff69b4;border-radius:50%;animation:bounce 2s infinite alternate;}
+.circle-animation:nth-child(2){animation-delay:0.3s;}
+.circle-animation:nth-child(3){animation-delay:0.6s;}
+@keyframes bounce{0%{transform:translateY(0) scale(1);}50%{transform:translateY(-20px) scale(1.2);}100%{transform:translateY(0) scale(1);}}
+
+.side-social{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px;z-index:9999;}
+.side-social a i{font-size:35px;color:#ffb6c1;transition: all 0.3s;animation: float 3s ease-in-out infinite;}
+.side-social a:hover i{transform:scale(1.2);text-shadow:0 0 15px #ffb6c1;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-8px);}100%{transform:translateY(0);}}
+
+/* SECTIONS */
+section{padding:120px 50px;text-align:center;}
+h2{font-family:'Playfair Display', serif;font-size:2.5rem;margin-bottom:30px;position:relative;}
+h2::after{content:'';width:60px;height:3px;background:#ffb6c1;display:block;margin:10px auto 0;border-radius:5px;}
+
+/* ABOUT POP-UP */
+#about{transform:scale(0.8);opacity:0;transition: all 0.6s ease-out;}
+#about.active{transform:scale(1);opacity:1;}
+
+/* SKILLS FLOAT */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:50px;}
+.skill-card{background:#1a1a1a;padding:20px;border-radius:15px;transition:all 0.3s;animation: floatSkill 3s ease-in-out infinite alternate;}
+@keyframes floatSkill{0%{transform:translateY(0);}50%{transform:translateY(-10px);}100%{transform:translateY(0);}}
+
+/* EXPERIENCE UNIQUE HOVER */
+.experience-list{display:flex;flex-direction:column;gap:20px;margin-top:30px;}
+.experience-item{background:#1a1a1a;padding:20px;border-radius:15px;transition:all 0.3s;position:relative;overflow:hidden;}
+.experience-item::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,#ff69b4,#ffb6c1);transition:0.5s;}
+.experience-item:hover::before{left:0;}
+.experience-item:hover{color:#0d0d0d;}
+
+/* PROJECTS HOVER GLOW */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px;}
+.project-card{background:#1a1a1a;padding:20px;border-radius:15px;transition:0.3s;}
+.project-card:hover{transform:translateY(-10px);box-shadow:0 0 20px #ffb6c1;}
+
+/* RESUME BUTTON */
+.resume-btn{display:inline-block;margin-top:20px;padding:10px 25px;border:none;color:#0d0d0d;background:linear-gradient(90deg,#ffb6c1,#ff69b4);border-radius:10px;font-weight:bold;text-decoration:none;transition:0.3s;}
+.resume-btn:hover{transform:scale(1.1);box-shadow:0 0 20px #ffb6c1;}
+
+/* FOOTER WAVES */
+footer{position:relative;background:#0d0d0d;text-align:center;padding:100px 20px 20px 20px;overflow:hidden;}
+.wave-container{position:absolute;top:0;left:0;width:100%;height:100px;overflow:hidden;}
+.wave{position:absolute;top:0;left:0;width:200%;height:100%;animation:waveMove 10s linear infinite;}
+.wave:nth-child(2){animation-delay:-5s;}
+.wave:nth-child(3){animation-delay:-2.5s;}
+@keyframes waveMove{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
