@@ -1,127 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abi Gayathri Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abi — Universe Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="starfield"></canvas>
+  <!-- Star Background -->
+  <canvas id="bg-stars"></canvas>
 
-<!-- CUSTOM STAR CURSOR -->
-<div class="custom-cursor"></div>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="customCursor"></div>
 
-<!-- HEADER TOP NAV -->
-<header>
-  <h1 class="logo">Abi</h1>
-  <nav class="nav-links">
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#resume">Resume</a>
-  </nav>
-</header>
+  <!-- Header / Navigation -->
+  <header>
+    <h1 class="logo">Abi</h1>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#resume">Resume</a>
+    </nav>
+  </header>
 
-<!-- HERO SECTION -->
-<section id="hero">
-  <div class="hero-content">
-    <h2>Hi, I'm <span>Abi Gayathri</span></h2>
-    <p>Full Stack Developer |||</p>
-    <div class="hero-animations">
-      <span class="circle-animation"></span>
-      <span class="circle-animation"></span>
-      <span class="circle-animation"></span>
+  <!-- Home Section -->
+  <section id="home" class="section home">
+    <div class="home-inner">
+      <h2 class="glow-name">Abi</h2>
+      <div class="quote-box">
+        <p>"Building ideas that sparkle brighter than stars."</p>
+      </div>
+    </div>
+    <!-- Socials -->
+    <div class="side-socials">
+      <a href="https://github.com/abigayathri23" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/abi-gayathri-pavalathrowvathan-a555472a3/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/ab_biie._/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:abigayathri23@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-star" data-skill="Python"><i class="fab fa-python"></i></div>
+      <div class="skill-star" data-skill="Java"><i class="fas fa-coffee"></i></div>
+      <div class="skill-star" data-skill="HTML"><i class="fab fa-html5"></i></div>
+      <div class="skill-star" data-skill="CSS"><i class="fab fa-css3-alt"></i></div>
+      <div class="skill-star" data-skill="JavaScript"><i class="fab fa-js"></i></div>
+      <div class="skill-star" data-skill="React.js"><i class="fab fa-react"></i></div>
+      <div class="skill-star" data-skill="Node.js"><i class="fab fa-node"></i></div>
+      <div class="skill-star" data-skill="MongoDB"><i class="fas fa-database"></i></div>
+      <div class="skill-star" data-skill="Bootstrap"><i class="fab fa-bootstrap"></i></div>
+      <div class="skill-star" data-skill="MySQL"><i class="fas fa-database"></i></div>
+      <div class="skill-star" data-skill="PHP"><i class="fab fa-php"></i></div>
+      <div class="skill-star" data-skill="Django"><i class="fas fa-leaf"></i></div>
+      <div class="skill-star" data-skill="GitHub"><i class="fab fa-github"></i></div>
+  
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-short">I build modern web experiences using React, JS, and AI tools.</p>
+    <span id="readMoreBtn" class="readmore-link">Read More</span>
+  </section>
+
+  <div id="aboutPopup" class="popup" aria-hidden="true">
+    <canvas id="sparkCanvas"></canvas>
+    <div class="popup-card">
+      <button id="closePopup" class="close-btn" aria-label="close">&times;</button>
+      <div class="about-content">
+        <img src="assets/profile.jpg" alt="Abi Gayathri" class="about-img">
+        <div class="about-text">
+          <h3>Abi Gayathri</h3>
+          <p>Full Stack Developer passionate about building user-centered applications. I work with React, Node, Python, and integrate AI to solve real problems.</p>
+          <ul>
+            <li>🎓 B.Tech — Information Technology (started 2022)</li>
+            <li>🏆 Hackathons: 36-hour college hackathon winner</li>
+            <li>💻 Tools: React, Node, Express, Python, Flask, Git, Firebase</li>
+            <li>📂 Projects & Repos included</li>
+          </ul>
+          <button id="closePopupBtn" class="btn">Close</button>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- SIDE SOCIAL LINKS -->
-<div class="side-social">
-  <a href="https://github.com/abigayathri23" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="https://www.linkedin.com/in/abi-gayathri-pavalathrowvathan-a555472a3/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="https://www.instagram.com/ab_biie._/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="mailto:abigayathri23@gmail.com"><i class="fas fa-envelope"></i></a>
-</div>
-
-
-<!-- SKILLS SECTION -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">HTML & CSS</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">React.js</div>
-    <div class="skill-card">Python</div>
-    <div class="skill-card">AI & ML</div>
-    <div class="skill-card">UI/UX Design</div>
-  </div>
-</section>
-<!-- PROJECTS SECTION -->
-<section id="projects">
-  <h2>My Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>AI-Based Women Safety App</h3>
-      <p>App that detects distress and sends alerts to trusted contacts.</p>
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience & Hackathons</h2>
+    <div class="experience-list">
+      <div class="experience-card">
+        <h3>AI-Based Women Safety App</h3>
+        <p>Role: Lead developer — Real-time distress detection & alerts.</p>
+        <a class="exp-link" href="https://github.com/abigayathri23/women-safety" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="experience-card">
+        <h3>Portfolio API Development</h3>
+        <p>Role: Backend Developer — JWT-secured REST APIs for portfolio management.</p>
+        <a class="exp-link" href="https://github.com/abigayathri23/portfolio-api" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="experience-card">
+        <h3>Women Safety Analytics Hackathon</h3>
+        <p>Role: Developer — AI-based threat detection and alert system.</p>
+        <a class="exp-link" href="#" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="experience-card">
+        <h3>Portfolio Redesign Project</h3>
+        <p>Role: Frontend Developer — Built animated portfolio site.</p>
+        <a class="exp-link" href="#" target="_blank">GitHub Repo</a>
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Portfolio API</h3>
-      <p>REST API for user portfolios with JWT authentication.</p>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section">
+    <h2 class="section-title">Resume</h2>
+    <div class="resume-card">
+      <h3>Abi Gayathri</h3>
+      <p>Full Stack Developer — React | Node | Python | AI</p>
+      <ul>
+        <li>AI-based hackathon project — distress detection & alerting</li>
+        <li>Portfolio API with JWT authentication</li>
+        <li>Diploma in UiPath & Full Stack certification</li>
+      </ul>
+      <a class="resume-download" href="assets/resume.pdf" download>Download Resume ☄️</a>
     </div>
-  </div>
-</section>
-<!-- ABOUT SECTION -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a passionate developer focusing on building creative and responsive web applications. I love working with React.js, JavaScript, and AI-based projects.</p>
-</section>
+  </section>
 
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
 
-<!-- EXPERIENCE SECTION -->
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="experience-list">
-    <div class="experience-item">
-      <h3>AI-Powered Women Safety App</h3>
-      <span>2025 - Present</span>
-      <p>Developed AI-driven alert system for real-time distress detection and response.</p>
+  <!-- Footer Waves -->
+  <footer>
+    <div class="footer-waves">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z" fill="#FFC0CB" fill-opacity="0.5"></path>
+      </svg>
+      <svg class="wave wave2" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,35 C150,70 350,-10 600,30 C850,70 1050,-10 1200,35 L1200,120 L0,120 Z" fill="#FFC0CB" fill-opacity="0.3"></path>
+      </svg>
     </div>
-    <div class="experience-item">
-      <h3>Portfolio API Development</h3>
-      <span>2024 - 2025</span>
-      <p>Created REST APIs for managing projects, skills, and portfolio data with JWT authentication.</p>
-    </div>
-  </div>
-</section>
+   
+  </footer>
 
-
-
-<!-- RESUME SECTION -->
-<section id="resume">
-  <h2>Resume</h2>
-  <a href="assets/resume.pdf" download class="resume-btn">Download Resume</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wave-container">
-    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z" fill="#ff69b4" fill-opacity="0.3"></path>
-    </svg>
-    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z" fill="#ff69b4" fill-opacity="0.5"></path>
-    </svg>
-    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z" fill="#ff69b4" fill-opacity="0.7"></path>
-    </svg>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
