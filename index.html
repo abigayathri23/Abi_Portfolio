@@ -24,10 +24,9 @@
   <header>
     <h1 class="logo">Abi</h1>
     <nav class="nav">
-      <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#resume">Resume</a>
     </nav>
@@ -49,6 +48,34 @@
       <a href="mailto:abigayathri23@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
+    <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-short">I build modern web experiences using React, JS, and AI tools.</p>
+    <span id="readMoreBtn" class="readmore-link">Read More</span>
+  </section>
+
+  <div id="aboutPopup" class="popup" aria-hidden="true">
+    <canvas id="sparkCanvas"></canvas>
+    <div class="popup-card">
+      <button id="closePopup" class="close-btn" aria-label="close">&times;</button>
+      <div class="about-content">
+        <img src="assets/profile.jpg" alt="Abi Gayathri" class="about-img">
+        <div class="about-text">
+          <h3>Abi Gayathri</h3>
+          <p>Full Stack Developer passionate about building user-centered applications. I work with React, Node, Python, and integrate AI to solve real problems.</p>
+          <ul>
+            <li>🎓 B.Tech — Information Technology (started 2022)</li>
+            <li>🏆 Hackathons: 36-hour college hackathon </li>
+            <li>💻 Tools: React, Node, Express, Python, Flask, Git, Firebase</li>
+            <li>📂 Projects & Repos included</li>
+          </ul>
+          <button id="closePopupBtn" class="btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Skills Section -->
   <section id="skills" class="section">
@@ -71,33 +98,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
-    <p class="about-short">I build modern web experiences using React, JS, and AI tools.</p>
-    <span id="readMoreBtn" class="readmore-link">Read More</span>
-  </section>
-
-  <div id="aboutPopup" class="popup" aria-hidden="true">
-    <canvas id="sparkCanvas"></canvas>
-    <div class="popup-card">
-      <button id="closePopup" class="close-btn" aria-label="close">&times;</button>
-      <div class="about-content">
-        <img src="assets/profile.jpg" alt="Abi Gayathri" class="about-img">
-        <div class="about-text">
-          <h3>Abi Gayathri</h3>
-          <p>Full Stack Developer passionate about building user-centered applications. I work with React, Node, Python, and integrate AI to solve real problems.</p>
-          <ul>
-            <li>🎓 B.Tech — Information Technology (started 2022)</li>
-            <li>🏆 Hackathons: 36-hour college hackathon winner</li>
-            <li>💻 Tools: React, Node, Express, Python, Flask, Git, Firebase</li>
-            <li>📂 Projects & Repos included</li>
-          </ul>
-          <button id="closePopupBtn" class="btn">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Experience Section -->
   <section id="experience" class="section">
@@ -137,7 +137,7 @@
         <li>Portfolio API with JWT authentication</li>
         <li>Diploma in UiPath & Full Stack certification</li>
       </ul>
-      <a class="resume-download" href="assets/resume.pdf" download>Download Resume ☄️</a>
+      <a class="resume-download" href="assets/resume.pdf" download>Download Resume</a>
     </div>
   </section>
 
