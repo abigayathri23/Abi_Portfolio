@@ -49,12 +49,51 @@ document.addEventListener("mousemove",e=>{
 });
 document.body.style.cursor="none";
 
-// ===== Scroll Top Button =====
-const scrollBtn=document.getElementById("scrollTopBtn");
-window.onscroll=()=>{
-  scrollBtn.style.display=window.scrollY>300?"block":"none";
+// ===== Scroll Top Button & Side Socials Visibility =====
+const scrollBtn = document.getElementById("scrollTopBtn");
+const sideSocials = document.querySelector(".side-socials");
+const homeSection = document.querySelector(".home");
+const header = document.querySelector("header");
+let lastScrollTop = 0;
+
+window.onscroll = () => {
+  const scrollTop = window.scrollY;
+  
+  // Scroll button visibility
+  scrollBtn.style.display = scrollTop > 300 ? "block" : "none";
+  
+  // Side socials visibility - only show in home section
+  if (homeSection) {
+    const homeBounds = homeSection.getBoundingClientRect();
+    const isInHomeSection = homeBounds.bottom > 0;  // Show only when home section is visible
+    sideSocials.classList.toggle("visible", isInHomeSection);
+  }
+
+  // Header behavior on scroll
+  if (scrollTop === 0) {
+    // At the top of the page - transparent header
+    header.style.background = "transparent";
+    header.style.boxShadow = "none";
+  } else {
+    // Not at the top - show background if header is visible
+    //header.style.background = "rgba(0, 0, 0, 0.98)";
+    //header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.2)";
+  }
+
+  // Hide/Show header based on scroll direction
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    // Scrolling down & not at top - hide header
+    header.style.transform = "translateY(-100%)";
+  } else {
+    // Scrolling up or at top - show header
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScrollTop = scrollTop;
 }
-scrollBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+scrollBtn.onclick = () => window.scrollTo({top: 0, behavior: "smooth"});
+
+window.dispatchEvent(new Event("scroll"));
 
 // ===== Skill Random Floating Animation Control =====
 // ===== Floating Skill Circles =====
@@ -123,14 +162,55 @@ sparkResize();
 drawSparks();
 addEventListener("resize",sparkResize);
 // ===== Auto Sliding Projects =====
-// ===== Auto Horizontal Slide on Scroll =====
 const projectContainer = document.querySelector(".projects-container");
 let currentIndex = 0;
 let isScrolling = false;
+let autoSlideInterval;
 
+// Function to move to the next slide
+function moveToNextSlide() {
+  if (!projectContainer || projectContainer.children.length <= 3) return;
+  
+  currentIndex = (currentIndex + 1) % (projectContainer.children.length - 2);
+  const cardWidth = projectContainer.children[0].offsetWidth + 24;
+  const offset = currentIndex * cardWidth; // Changed from negative to positive for right direction
+  
+  projectContainer.style.transition = 'transform 0.8s ease';
+  projectContainer.style.transform = `translateX(${offset}px)`;
+  
+  // Reset to beginning when reaching the end
+  if (currentIndex === projectContainer.children.length - 3) {
+    setTimeout(() => {
+      projectContainer.style.transition = 'none';
+      currentIndex = 0;
+      projectContainer.style.transform = 'translateX(0)';
+      setTimeout(() => {
+        projectContainer.style.transition = 'transform 0.8s ease';
+      }, 50);
+    }, 800);
+  }
+}
+
+// Start auto-sliding
+function startAutoSlide() {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(moveToNextSlide, 3000); // Slide every 3 seconds
+}
+
+// Pause auto-sliding on user interaction
+function pauseAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    // Restart after 5 seconds of no interaction
+    setTimeout(startAutoSlide, 5000);
+  }
+}
+
+// Handle manual scroll
 window.addEventListener("wheel", (e) => {
   if (isScrolling) return; // prevent rapid scrolling
   isScrolling = true;
+  pauseAutoSlide();
 
   if (e.deltaY > 0) {
     // Scroll down → next set of projects
@@ -141,9 +221,16 @@ window.addEventListener("wheel", (e) => {
   }
 
   const cardWidth = projectContainer.children[0].offsetWidth + 24;
-  const offset = -currentIndex * cardWidth;
+  const offset = currentIndex * cardWidth; // Changed from negative to positive for right direction
   projectContainer.style.transform = `translateX(${offset}px)`;
 
   setTimeout(() => (isScrolling = false), 800); // delay to make it smooth
 });
+
+// Start auto-sliding when the page loads
+startAutoSlide();
+
+// Pause auto-sliding when the user hovers over the projects
+projectContainer.addEventListener('mouseenter', pauseAutoSlide);
+projectContainer.addEventListener('mouseleave', startAutoSlide);
 
