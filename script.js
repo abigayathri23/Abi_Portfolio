@@ -56,20 +56,36 @@ window.onscroll=()=>{
 }
 scrollBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
-// ===== Skills Comet Animation =====
-const skillStars=document.querySelectorAll(".skill-star");
-skillStars.forEach(star=>{
-  let x=Math.random()*window.innerWidth;
-  let y=Math.random()*window.innerHeight;
-  let dx=(Math.random()-0.5)*0.6;
-  let dy=(Math.random()-0.5)*0.6;
-  function move(){
-    x+=dx; y+=dy;
-    if(x<0||x>window.innerWidth) dx*=-1;
-    if(y<0||y>window.innerHeight) dy*=-1;
-    star.style.transform=`translate(${x}px,${y}px)`;
+// ===== Skill Random Floating Animation Control =====
+// ===== Floating Skill Circles =====
+const skills = document.querySelectorAll(".skill-circle");
+const skillArea = document.querySelector(".skills-area");
+
+skills.forEach(circle => {
+  // random starting position
+  const maxX = skillArea.offsetWidth - 80;
+  const maxY = skillArea.offsetHeight - 80;
+  let x = Math.random() * maxX;
+  let y = Math.random() * maxY;
+
+  // random small drift direction and speed
+  let dx = (Math.random() - 0.5) * 0.8;
+  let dy = (Math.random() - 0.5) * 0.8;
+
+  function move() {
+    x += dx;
+    y += dy;
+
+    // bounce inside skill area
+    if (x <= 0 || x >= maxX) dx *= -1;
+    if (y <= 0 || y >= maxY) dy *= -1;
+
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+
     requestAnimationFrame(move);
   }
+
   move();
 });
 
@@ -106,3 +122,27 @@ function drawSparks(){
 sparkResize();
 drawSparks();
 addEventListener("resize",sparkResize);
+// ===== Auto Sliding Projects =====
+// ===== Auto Horizontal Slide on Scroll =====
+const projectContainer = document.querySelector(".projects-container");
+let currentIndex = 0;
+let isScrolling = false;
+
+window.addEventListener("wheel", (e) => {
+  if (isScrolling) return; // prevent rapid scrolling
+  isScrolling = true;
+
+  if (e.deltaY > 0) {
+    // Scroll down → next set of projects
+    currentIndex = Math.min(currentIndex + 1, projectContainer.children.length - 3);
+  } else {
+    // Scroll up → previous set of projects
+    currentIndex = Math.max(currentIndex - 1, 0);
+  }
+
+  const cardWidth = projectContainer.children[0].offsetWidth + 24;
+  const offset = -currentIndex * cardWidth;
+  projectContainer.style.transform = `translateX(${offset}px)`;
+
+  setTimeout(() => (isScrolling = false), 800); // delay to make it smooth
+});
