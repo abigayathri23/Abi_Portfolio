@@ -146,3 +146,4 @@ window.addEventListener("wheel", (e) => {
 
   setTimeout(() => (isScrolling = false), 800); // delay to make it smooth
 });
+
