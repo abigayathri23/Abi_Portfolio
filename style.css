@@ -418,8 +418,8 @@ header {
 
 /* ===== Project Card Style ===== */
 .project-card {
-  min-width: 320px;
-  max-width: 340px;
+  min-width: 335px;
+  max-width: 352px;
   /*background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));*/
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 16px;
