@@ -41,12 +41,26 @@ header {
               background-color 0.3s ease,
               box-shadow 0.3s ease04;
 }
+/* Place logo at absolute left corner */
 .logo {
-  margin-right: auto;
-  color: #ff80b3;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  text-shadow: 0 0 10px rgba(255, 128, 179, 0.4);
+  position: absolute;
+  height: 40px;
+  left: 30px; /* distance from left edge */
+  top: 15px;  /* distance from top */
+  text-decoration: none;
+}
+
+/* Moon icon styling */
+.logo i {
+  font-size: 59px;
+  color: #ff9bd7;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo i:hover {
+  transform: rotate(-40deg) scale(1.1);
+  text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff9bd7;
+  color: #fff;
 }
 
 .nav {
@@ -54,14 +68,18 @@ header {
   gap: 80px;
   align-items: center;
 }
+header.hide {
+  transform: translateY(-100%);
+}
 
 .nav a {
+  margin: 0 15px;
   color: #dcdcdc;
   text-decoration: none;
   padding: 6px 0;
   position: relative;
   font-weight: 600;
-  transition: color 0.25s;
+  transition: color 0.s;
   font-size: 1rem;
 }
 
