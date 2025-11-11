@@ -141,34 +141,71 @@
   </div>
 </section>
 
+<!-- Experience Section -->
+<section id="experience" class="section">
+  <h2 class="section-title">Experience</h2>
+  <div class="experience-list">
 
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <h2 class="section-title">Experience</h2>
-    <div class="experience-list">
-      <div class="experience-card">
-        <h3>Motion Cut - Internship</h3>
-        <p>Frontend Web Development Intern — Built and optimized responsive web pages.</p>
-        <a class="exp-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_motioncut-internship-frontenddevelopment-activity-7370365796486688768-syxa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEk6pSEBAYNubm1Mwd6MNySwMa1Kb7xZAxo" target="_blank">View</a>
+    <div class="experience-card">
+      <h3>Motion Cut - Internship</h3>
+      <p>Frontend Web Development Intern — Built and optimized responsive web pages.</p>
+      <div class="exp-actions">
+        <button class="exp-link" onclick="openPopup('cert1')">Certificate</button>
+        <a class="exp-link linkedin-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_motioncut-internship-frontenddevelopment-activity-7370365796486688768-syxa?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn</a>
       </div>
-      <div class="experience-card">
-        <h3>Forage Job Simulation - Accenture</h3>
-        <p>Data Analytics & Visualization — Enhanced data modeling and visualization expertise through real-world business scenarios</p>
-        <a class="exp-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_jobsimulation-accenture-forage-activity-7249130294828507138-nZ5j?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEk6pSEBAYNubm1Mwd6MNySwMa1Kb7xZAxo" target="_blank">View</a>
-      </div>
-      <div class="experience-card">
-        <h3>Dr. Kalam Young Achiever Award - World Youth Federation </h3>
-        <p>Team Project — Presented a project IoT-Based Heart Attack Detection and Heart Rate Monitor.</p>
-        <a class="exp-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_iot-healthcaretechnology-drkalamyoungachiever-activity-7387059042864697344-LYUu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEk6pSEBAYNubm1Mwd6MNySwMa1Kb7xZAxo" target="_blank">View</a>
-      </div>
-      <div class="experience-card">
-        <h3>Hackathon - Electrothon - Chennai Institute of Technology</h3>
-        <p>Echoes of Innovation — A national-level online hackathon focused on innovative tech solutions.</p>
-        <a class="exp-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_hackathon-teamhackelite-ai-activity-7384116541841166336-SESu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEk6pSEBAYNubm1Mwd6MNySwMa1Kb7xZAxo" target="_blank">View</a>
-      </div>
-   
     </div>
-  </section>
+
+    <div class="experience-card">
+      <h3>Forage Job Simulation - Accenture</h3>
+      <p>Data Analytics & Visualization — Enhanced data modeling and visualization expertise through real-world business scenarios.</p>
+      <div class="exp-actions">
+        <button class="exp-link" onclick="openPopup('cert2')">Certificate</button>
+        <a class="exp-link linkedin-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_jobsimulation-accenture-forage-activity-7249130294828507138-nZ5j?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>Dr. Kalam Young Achiever Award - World Youth Federation</h3>
+      <p>Team Project — Presented a project IoT-Based Heart Attack Detection and Heart Rate Monitor.</p>
+      <div class="exp-actions">
+        <button class="exp-link" onclick="openPopup('cert3')">Certificate</button>
+        <a class="exp-link linkedin-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_iot-healthcaretechnology-drkalamyoungachiever-activity-7387059042864697344-LYUu?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>Hackathon - Electrothon - Chennai Institute of Technology</h3>
+      <p>Echoes of Innovation — A national-level online hackathon focused on innovative tech solutions.</p>
+      <div class="exp-actions">
+        <button class="exp-link" onclick="openPopup('cert4')">Certificate</button>
+        <a class="exp-link linkedin-link" href="https://www.linkedin.com/posts/abi-gayathri-pavalathrowvathan-a555472a3_hackathon-teamhackelite-ai-activity-7384116541841166336-SESu?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POP-UP BOXES -->
+<div id="cert1" class="popup">
+  <span class="close" onclick="closePopup('cert1')">&times;</span>
+  <img src="assets/Motioncut.png" alt="Motion Cut Certificate">
+</div>
+
+<div id="cert2" class="popup">
+  <span class="close" onclick="closePopup('cert2')">&times;</span>
+  <img src="assets/Accenture.png" alt="Accenture Certificate">
+</div>
+
+<div id="cert3" class="popup">
+  <span class="close" onclick="closePopup('cert3')">&times;</span>
+  <img src="assets/DrKalam.png" alt="Dr. Kalam Award Certificate">
+</div>
+
+<div id="cert4" class="popup">
+  <span class="close" onclick="closePopup('cert4')">&times;</span>
+  <img src="assets/Electrathon.png" alt="Hackathon Certificate">
+</div>
+
 
 <!-- Resume Section -->
 <section id="resume" class="section">
