@@ -233,4 +233,10 @@ startAutoSlide();
 // Pause auto-sliding when the user hovers over the projects
 projectContainer.addEventListener('mouseenter', pauseAutoSlide);
 projectContainer.addEventListener('mouseleave', startAutoSlide);
-
+// ===== Popup Experience Functions =====
+function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+  }
