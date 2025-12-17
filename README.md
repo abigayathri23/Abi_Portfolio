@@ -56,10 +56,10 @@ Nadar Saraswathi Girls Higher Secondary School, Theni, Tamil Nadu, India | 65% (
 ## Certifications
 - TATA Data Visualization Job Simulation (Forage) – Empowering Business with Effective Insights  
 - Accenture Data Analytics and Visualization Job Simulation (Forage) – Data modeling and visualization expertise  
-- Infosys Certifications - HTML,CSS,JS,Programming fundamentals in Python and Java, Data Science, Database Management
+- Infosys Certifications - HTML, CSS, JS, Programming fundamentals in Python and Java, Data Science, Database Management
 
 ## Competitions
-- Dr. Kalam Young Achiever Award 2025- World Youth Federation at Madurai
+- Dr. Kalam Young Achiever Award 2025- World Youth Federation, Madurai
 - Electrothon – Echoes of Innovation Hackathon, Chennai Institute of Technology  
 - HaXplore – CodeFest’25, IIT (BHU), Varanasi  
 - Techutsav’24 – Symposium, Thiyagaraja College of Engineering, Madurai  
